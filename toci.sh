@@ -37,7 +37,7 @@ timeout --foreground 60m ./toci_git.sh > $TOCI_LOG_DIR/git.out 2>&1 || STATUS=1
 
 if [ $STATUS == 0 ] ; then
   mark_time Starting setup
-  timeout --foreground 60m ./toci_setup.sh > $TOCI_LOG_DIR/setup.out 2>&1 || STATUS=1
+  ./toci_setup.sh > $TOCI_LOG_DIR/setup.out 2>&1 || STATUS=1
 fi
 if [ $STATUS == 0 ] ; then
     mark_time Starting test
